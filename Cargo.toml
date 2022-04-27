@@ -1,0 +1,21 @@
+[package]
+name = "cargo-bug-poc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["solana_1_10"]
+solana_1_9 = ["solana-banks-client-1-9",
+"solana-program-1-9"]
+solana_1_10= ["solana-banks-client-1-10",
+"solana-program-1-10"]
+
+[dependencies]
+solana-banks-client-1-9 = {package = "solana-banks-client", version = "=1.9", optional = true }
+solana-program-1-9 = {package = "solana-program", version = "=1.9", optional = true }
+solana-banks-client-1-10= {package = "solana-banks-client", version = "=1.10", optional = true }
+solana-program-1-10= {package = "solana-program", version = "=1.10", optional = true }
+
+
